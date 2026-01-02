@@ -1,9 +1,31 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { Film, ChevronDown, Loader2, Search, AlertCircle, ExternalLink, X, Star, Info, Play, Award, Users, Clapperboard, Globe } from 'lucide-react';
+import { ChevronDown, Loader2, Search, AlertCircle, ExternalLink, X, Star, Info, Play, Award, Users, Clapperboard, Globe } from 'lucide-react';
 import { Show, Genre, GENRES, DECADES, Region, REGIONS } from './types';
 import { TVService } from './services/movieService';
 import MovieCard from './components/MovieCard';
 import LoadingSkeleton from './components/LoadingSkeleton';
+
+const LogoIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-lg">
+    {/* Antennas */}
+    <line x1="256" y1="140" x2="180" y2="60" stroke="white" strokeWidth="20" strokeLinecap="round"/>
+    <line x1="256" y1="140" x2="332" y2="60" stroke="white" strokeWidth="20" strokeLinecap="round"/>
+    {/* Main TV Body */}
+    <rect x="100" y="140" width="312" height="240" rx="30" fill="white"/>
+    {/* Screen Area */}
+    <rect x="125" y="165" width="210" height="190" rx="15" fill="#050505"/>
+    {/* Play Button on Screen */}
+    <path d="M200 220L260 260L200 300V220Z" fill="white"/>
+    {/* Side Control Panel */}
+    <rect x="350" y="175" width="40" height="170" rx="10" fill="#050505" fillOpacity="0.1"/>
+    {/* Dial Knobs */}
+    <circle cx="370" cy="210" r="10" fill="#050505" fillOpacity="0.6"/>
+    <circle cx="370" cy="250" r="10" fill="#050505" fillOpacity="0.6"/>
+    {/* TV Feet */}
+    <path d="M160 380L140 410" stroke="white" strokeWidth="20" strokeLinecap="round"/>
+    <path d="M352 380L372 410" stroke="white" strokeWidth="20" strokeLinecap="round"/>
+  </svg>
+);
 
 const getRandomDecade = (): string => {
   const options = ['2010s', '2000s', '1990s', '1980s'];
@@ -108,9 +130,7 @@ const App = () => {
       <header className="relative bg-[#050505] border-b border-white/5 px-4 md:px-10 py-3 z-[60]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 bg-white text-black rounded flex items-center justify-center shadow-lg">
-              <Film className="w-4 h-4" />
-            </div>
+            <LogoIcon />
             <h1 className="text-sm font-black tracking-tighter italic uppercase">TVTILE</h1>
           </div>
 
