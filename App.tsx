@@ -387,18 +387,10 @@ const App = () => {
 
                    <div className="flex flex-col sm:flex-row gap-3">
                       <a 
-                        href={`https://web.stremio.com/#/search?search=${encodeURIComponent(activeShow.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-3 p-4 bg-white text-black rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-neutral-200 transition-all shadow-xl active:scale-95"
-                      >
-                         Stream Series
-                      </a>
-                      <a 
                         href={`https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(activeShow.title)}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="flex-1 flex items-center justify-center gap-3 p-4 bg-white/5 border border-white/10 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+                        className="w-full flex items-center justify-center gap-3 p-4 bg-white/5 border border-white/10 text-white rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"
                       >
                         <ExternalLink className="w-4 h-4" /> Wikipedia
                       </a>
